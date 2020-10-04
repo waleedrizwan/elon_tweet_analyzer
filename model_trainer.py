@@ -31,9 +31,12 @@ X_tfidf = X_tfidf.todense()
 ##Apply Naive Bayes algorithm to train data
 
 # Extract the news body and labels for training the classifier
-X_train = X_tfidf[:66,:]
-Y_train = data.iloc[:66,1]
 
-# Train the NB classifier
+# Independent variables are tweets 
+X_train = X_tfidf[:200,:]
+# dependent set includes the manual labels pos, neg or neutral
+Y_train = data.iloc[:200,1]
+
+# Train the NB classifier with fit method and data sets 
 clf = GaussianNB().fit(X_train, Y_train) 
 pickle.dump(clf, open("nb_elon_tweets", 'wb')) # Save classifier for reuse
