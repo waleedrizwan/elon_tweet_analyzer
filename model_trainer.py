@@ -5,13 +5,16 @@ from sklearn.naive_bayes import GaussianNB
 import pandas as pd
 import pickle
 
+
+# data has been labeled pos, neg or neutral based on how it will impact shareholders view of the company Telsa Inc
+
 data = pd.read_csv("ElonMusk_Tweets.csv", encoding = "ISO-8859-1")
 
 
 ## Adjust to account for differences in csv files 
 
 # extract the column which contains the Tweets
-X = data.loc[0]
+X = data.iloc[:, 0]
 
 # tokenize the text from tweet and convert data in matrix format
 vectorizer = CountVectorizer(stop_words='english')
@@ -29,8 +32,7 @@ X_tfidf = X_tfidf.todense()
 
 # Extract the news body and labels for training the classifier
 X_train = X_tfidf[:66,:]
-Y_train = data.iloc[:66,2]
-
+Y_train = data.iloc[:66,1]
 
 # Train the NB classifier
 clf = GaussianNB().fit(X_train, Y_train) 
