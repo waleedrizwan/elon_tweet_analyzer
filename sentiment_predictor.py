@@ -25,4 +25,8 @@ X_tfidf_test = X_tfidf_test.todense()
 y_pred = nb_clf.predict(X_tfidf_test)
 
 
+df = pd.DataFrame(data=y_pred)
 
+
+# Creates series object containing 200 Tweets  
+df.to_csv("Model_Predictions.csv", index=False)
