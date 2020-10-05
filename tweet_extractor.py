@@ -15,10 +15,21 @@ import tweepy
 import pandas as pd 
 
 
+f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\access_key.txt', "r")
+access_key = f.read()
+
+f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\access_token.txt', "r")
+access_token = f.read()
+
+f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\secret_key.txt', "r")
+secret_key = f.read()
+
+f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\secret_token.txt', "r")
+secret_token = f.read()
 
 # requires authentation from Twittter Developer Community 
-auth = tweepy.OAuthHandler('MdLc2PWvaUh4ZCQn0DJESoe4n', 'M7PqFUKvpV2MtnvvLRpo0mvg5ZDQgaa5JlavUxy5YgFlDONEeL')
-auth.set_access_token('1309966965663035392-4YY7ERbSPWTFyPoAHwCQr0K7c0FtYC', 'RPBhXHjoumebhiURAQ7D5HZtq2EaBFwHsoZKQxn7bBiXo')
+auth = tweepy.OAuthHandler(access_key, access_token)
+auth.set_access_token(secret_key, secret_token)
 
 api = tweepy.API(auth)
 
