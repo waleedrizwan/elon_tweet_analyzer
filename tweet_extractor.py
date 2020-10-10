@@ -15,16 +15,16 @@ import tweepy
 import pandas as pd 
 
 
-f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\access_key.txt', "r")
+f = open('C:\\Users\\walee\\Desktop\\access_key.txt', "r")
 access_key = f.read()
 
-f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\access_token.txt', "r")
+f = open('C:\\Users\\walee\\Desktop\\access_token.txt', "r")
 access_token = f.read()
 
-f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\secret_key.txt', "r")
+f = open('C:\\Users\\walee\\Desktop\\secret_key.txt', "r")
 secret_key = f.read()
 
-f = open('C:\\Users\\walee\\Desktop\\tesla_trader\\secret_token.txt', "r")
+f = open('C:\\Users\\walee\\Desktop\\secret_token.txt', "r")
 secret_token = f.read()
 
 # requires authentation from Twittter Developer Community 
