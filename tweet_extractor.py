@@ -51,11 +51,7 @@ for x in tweetList:
 col1 = {'Tweets': actualTextList}
 df = pd.DataFrame(data=col1)
 
-df.to_csv("ElonMusk_Tweets.csv", index=False)
-
-
-## manually add labels to each tweet 
-## train ML algo using the logic from the Udemy course 
+df.to_csv("ElonMusk_Tweets.csv", index=False) 
     
 
 
