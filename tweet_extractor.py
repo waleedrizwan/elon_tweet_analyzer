@@ -1,31 +1,19 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 27 19:31:59 2020
-
-@author: Waleed
-
-Extracts the text from 200 most recent tweets
-needed to train model 
-
-"""
-
-
-
 import tweepy 
 import pandas as pd 
 
 
-f = open('C:\\Users\\walee\\Desktop\\access_key.txt', "r")
-access_key = f.read()
+# API keys hidden on desktop
+keyFile = open('C:\\Users\\walee\\Desktop\\access_key.txt', "r")
+access_key = keyFile.read()
 
-f = open('C:\\Users\\walee\\Desktop\\access_token.txt', "r")
-access_token = f.read()
+keyFile = open('C:\\Users\\walee\\Desktop\\access_token.txt', "r")
+access_token = keyFile.read()
 
-f = open('C:\\Users\\walee\\Desktop\\secret_key.txt', "r")
-secret_key = f.read()
+keyFile = open('C:\\Users\\walee\\Desktop\\secret_key.txt', "r")
+secret_key = keyFile.read()
 
-f = open('C:\\Users\\walee\\Desktop\\secret_token.txt', "r")
-secret_token = f.read()
+keyFile = open('C:\\Users\\walee\\Desktop\\secret_token.txt', "r")
+secret_token = keyFile.read()
 
 # requires authentation from Twittter Developer Community 
 auth = tweepy.OAuthHandler(access_key, access_token)
@@ -49,14 +37,6 @@ for x in tweetList:
     
 # Creates series object containing 200 Tweets  
 col1 = {'Tweets': actualTextList}
-df = pd.DataFrame(data=col1)
+df = pd.DataFrame(data=col1, index=[0])
 
 df.to_csv("ElonMusk_Tweets.csv", index=False)
-
-
-## manually add labels to each tweet 
-## train ML algo using the logic from the Udemy course 
-    
-
-
-    
