@@ -37,6 +37,11 @@ for x in tweetList:
     
 # Creates series object containing 200 Tweets  
 col1 = {'Tweets': actualTextList}
+
 df = pd.DataFrame(data=col1, index=[0])
 
 df.to_csv("ElonMusk_Tweets.csv", index=False)
+
+df = pd.DataFrame(data=col1)
+
+df.to_csv("ElonMusk_Tweets.csv", index=False) 
