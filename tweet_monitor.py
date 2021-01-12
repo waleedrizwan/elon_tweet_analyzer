@@ -64,7 +64,7 @@ def sendEmail(signal):
     server.starttls()  # Encrypts Connection
 
     # Login to google server with  GMAIL Information
-    server.login("w2rizwan@gmail.com", "Peppermintroad57%")
+    server.login("w2rizwan@gmail.com", "")
 
     if signal == "Pos":
         decision = "Recent Tweet has been predicted to increase the price of TSLA in the short term"
